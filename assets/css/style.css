@@ -571,3 +571,4 @@ fieldset { border: 0; padding: 0; margin: 0; }
 main { overflow-x: clip; } /* empêche les animations d'apparition de créer un défilement horizontal */
 @media (min-width: 1200px) { .main-nav a.nav-link { white-space: nowrap; padding-inline: 10px; } .main-nav { gap: 20px; } }
 .main-nav__cta .btn { white-space: nowrap; }
+.hero .eyebrow, .page-hero .eyebrow, .cta-band .eyebrow { color: var(--sun-400); }
