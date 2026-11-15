@@ -66,7 +66,6 @@ Recherchez `[` / la classe `todo` dans les fichiers : chaque élément à compl�
 - Horaires — `contact.html`
 - Liste des communes / rayon — `zone.html`, accueil ; préfixes de départements acceptés dans `assets/js/main.js` (vérificateur de code postal)
 - Votre histoire / parcours — `a-propos.html`
-- Crédit d'impôt 50 % : uniquement si vous êtes déclaré « services à la personne ». Sinon, supprimez les mentions (`tarifs.html`, `services.html` FAQ, `cgv.html` art. 12).
 - CGV : durée de validité des devis, acompte, délais de paiement, délai de réclamation, frais de déplacement inutile.
 - Nom de domaine : remplacez `https://www.lkh-service.fr` partout (balises canonical/og dans chaque page, `sitemap.xml`, `robots.txt`, JSON-LD de `index.html`). Exemple : `grep -rl "lkh-service.fr" . | xargs sed -i 's#https://www.lkh-service.fr#https://www.votre-domaine.fr#g'`
 
