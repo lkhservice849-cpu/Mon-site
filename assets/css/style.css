@@ -572,3 +572,4 @@ main { overflow-x: clip; } /* empêche les animations d'apparition de créer un 
 @media (min-width: 1200px) { .main-nav a.nav-link { white-space: nowrap; padding-inline: 10px; } .main-nav { gap: 20px; } }
 .main-nav__cta .btn { white-space: nowrap; }
 .hero .eyebrow, .page-hero .eyebrow, .cta-band .eyebrow { color: var(--sun-400); }
+.step-num { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--sun-400); color: var(--forest-900); font-family: var(--font-title); font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }

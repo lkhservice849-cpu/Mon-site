@@ -9,7 +9,7 @@ Aucune dépendance, aucun cookie, aucune ressource tierce : polices, images et s
 index.html                  Accueil
 services.html               Détail des 10 services (ancres #tonte, #haies, …)
 realisations.html           Galerie avant / après filtrable
-tarifs.html                 Grille tarifaire indicative
+tarifs.html                 Fonctionnement du devis (aucun prix affiché)
 a-propos.html               Présentation, valeurs, engagement environnemental
 zone.html                   Zone d'intervention + vérificateur de code postal
 contact.html                Formulaire de devis, coordonnées, horaires, itinéraire
@@ -65,7 +65,6 @@ Recherchez `[` / la classe `todo` dans les fichiers : chaque élément à compl�
 **Contenu**
 - Horaires — `contact.html`
 - Liste des communes / rayon — `zone.html`, accueil ; préfixes de départements acceptés dans `assets/js/main.js` (vérificateur de code postal)
-- Tarifs réels — `tarifs.html`
 - Votre histoire / parcours — `a-propos.html`
 - Crédit d'impôt 50 % : uniquement si vous êtes déclaré « services à la personne ». Sinon, supprimez les mentions (`tarifs.html`, `services.html` FAQ, `cgv.html` art. 12).
 - CGV : durée de validité des devis, acompte, délais de paiement, délai de réclamation, frais de déplacement inutile.
