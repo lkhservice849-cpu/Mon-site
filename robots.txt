@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /404.html
 
-Sitemap: https://www.lkh-service.com/sitemap.xml
+Sitemap: https://lkhservice849-cpu.github.io/Mon-site/sitemap.xml
