@@ -31,13 +31,13 @@
   <div class="wrap site-header__in">
     <a class="brand" href="index.html" aria-label="LKH Service – accueil">
       <span class="brand__name">LKH Service</span>
-      <span class="brand__tag">Jardins · Isère</span>
+      <span class="brand__tag">Arbres · Haies · Terrains</span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu"><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Navigation principale">
       <ul>
         <li><a href="services.html">Services</a></li>
-        <li><a href="calendrier.html">Calendrier du jardin</a></li>
+        <li><a href="calendrier.html">Calendrier des travaux</a></li>
         <li><a href="tarifs.html">Devis</a></li>
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="zone.html">Secteur</a></li>
@@ -66,29 +66,30 @@
         <p class="fine">Les champs marqués d'un <span class="req">*</span> sont obligatoires.</p>
         <fieldset class="field">
           <legend>De quoi avez-vous besoin&nbsp;? <span class="req">*</span></legend>
-          <div class="choices"><label class="choice"><input type="checkbox" name="service" value="tonte"><span>Tonte de pelouse</span></label><label class="choice"><input type="checkbox" name="service" value="haies"><span>Taille de haies et d'arbustes</span></label><label class="choice"><input type="checkbox" name="service" value="debroussaillage"><span>Débroussaillage</span></label><label class="choice"><input type="checkbox" name="service" value="elagage"><span>Élagage</span></label><label class="choice"><input type="checkbox" name="service" value="desherbage"><span>Désherbage</span></label><label class="choice"><input type="checkbox" name="service" value="massifs"><span>Entretien de massifs</span></label><label class="choice"><input type="checkbox" name="service" value="plantations"><span>Plantations</span></label><label class="choice"><input type="checkbox" name="service" value="creation"><span>Création de jardins</span></label><label class="choice"><input type="checkbox" name="service" value="dechets"><span>Évacuation des déchets verts</span></label><label class="choice"><input type="checkbox" name="service" value="autre"><span>Autre demande</span></label></div>
+          <div class="choices"><label class="choice"><input type="checkbox" name="service" value="debroussaillage"><span>Débroussaillage</span></label><label class="choice"><input type="checkbox" name="service" value="abattage"><span>Abattage d'arbres</span></label><label class="choice"><input type="checkbox" name="service" value="elagage"><span>Élagage et taille d'arbres</span></label><label class="choice"><input type="checkbox" name="service" value="haies"><span>Taille de haies</span></label><label class="choice"><input type="checkbox" name="service" value="dechets"><span>Évacuation du bois et des branches</span></label><label class="choice"><input type="checkbox" name="service" value="autre"><span>Autre demande</span></label></div>
           <p class="field__error" id="service-error" aria-live="polite"></p>
         </fieldset>
         <div class="form__2">
           <div class="field">
-            <label for="surface">Surface approximative</label>
+            <label for="surface">Ampleur du chantier</label>
             <select id="surface" name="surface">
-              <option value="">Je ne sais pas</option><option>Moins de 200 m²</option><option>200 à 500 m²</option>
-              <option>500 à 1 000 m²</option><option>1 000 à 3 000 m²</option><option>Plus de 3 000 m²</option>
+              <option value="">Je ne sais pas</option><option>Un arbre</option><option>Plusieurs arbres</option>
+              <option>Une haie de moins de 20 m</option><option>Une haie de plus de 20 m</option>
+              <option>Un terrain de moins de 500 m²</option><option>Un terrain de 500 à 2 000 m²</option><option>Un terrain de plus de 2 000 m²</option>
             </select>
           </div>
           <div class="field">
-            <label for="cp">Code postal du jardin <span class="req">*</span></label>
+            <label for="cp">Code postal du chantier <span class="req">*</span></label>
             <input id="cp" name="cp" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" required aria-describedby="cp-err">
             <p class="field__error" id="cp-err"></p>
           </div>
         </div>
         <div class="form__2">
           <div class="field">
-            <label for="frequence">À quel rythme&nbsp;? <span class="req">*</span></label>
+            <label for="frequence">C'est pour quand&nbsp;? <span class="req">*</span></label>
             <select id="frequence" name="frequence" required aria-describedby="freq-err">
-              <option value="">Choisir…</option><option>Une seule fois</option><option>Chaque semaine</option>
-              <option>Toutes les 2 semaines</option><option>Chaque mois</option><option>Selon les saisons</option><option>Je ne sais pas encore</option>
+              <option value="">Choisir…</option><option>C'est urgent (arbre dangereux, branche cassée)</option><option>Dès que possible</option>
+              <option>Dans les prochains mois</option><option>À la bonne saison</option><option>Je me renseigne</option>
             </select>
             <p class="field__error" id="freq-err"></p>
           </div>
@@ -124,7 +125,7 @@
         </div>
         <div class="field">
           <label for="message">Votre message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Ce qu'il y a à faire, l'accès au terrain, vos disponibilités…"></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Nombre et hauteur des arbres, longueur de la haie, état du terrain, accès…"></textarea>
         </div>
         <div class="hp" aria-hidden="true"><label for="website">Ne pas remplir</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <div class="field">
@@ -132,7 +133,7 @@
           <p class="field__error"></p>
         </div>
         <button class="btn btn--block" type="submit">Envoyer ma demande <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
-        <p class="fine">Votre messagerie s'ouvre avec la demande déjà rédigée&nbsp;: il ne reste qu'à l'envoyer. Vos données servent uniquement à vous répondre et sont conservées 3 ans au plus. Voir la <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
+        <p class="fine">Votre messagerie s'ouvre avec la demande déjà rédigée&nbsp;: il ne reste qu'à l'envoyer, en joignant des photos si vous en avez. Vos données servent uniquement à vous répondre et sont conservées 3 ans au plus. Voir la <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
         <div id="form-status" class="form-status" role="status" tabindex="-1" hidden></div>
       </form>
     </div>
@@ -155,28 +156,24 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
-      <p class="footer-big">Un jardin à entretenir&nbsp;?<br><a href="tel:+33750068656">07 50 06 86 56</a></p>
+      <p class="footer-big">Un arbre, une haie, un terrain&nbsp;?<br><a href="tel:+33750068656">07 50 06 86 56</a></p>
       <a class="btn btn--light" href="contact.html#devis">Demander un devis gratuit <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
     </div>
     <div class="footer-cols">
       <div>
         <h2>Services</h2>
         <ul>
-          <li><a href="service-tonte.html">Tonte de pelouse</a></li>
-          <li><a href="service-haies.html">Taille de haies et d'arbustes</a></li>
           <li><a href="service-debroussaillage.html">Débroussaillage</a></li>
-          <li><a href="service-elagage.html">Élagage</a></li>
-          <li><a href="service-desherbage.html">Désherbage</a></li>
-          <li><a href="service-massifs.html">Entretien de massifs</a></li>
-          <li><a href="service-plantations.html">Plantations</a></li>
-          <li><a href="service-creation.html">Création de jardins</a></li>
-          <li><a href="service-dechets.html">Évacuation des déchets verts</a></li>
+          <li><a href="service-abattage.html">Abattage d'arbres</a></li>
+          <li><a href="service-elagage.html">Élagage et taille d'arbres</a></li>
+          <li><a href="service-haies.html">Taille de haies</a></li>
+          <li><a href="service-dechets.html">Évacuation du bois et des branches</a></li>
         </ul>
       </div>
       <div>
         <h2>Le site</h2>
         <ul>
-          <li><a href="calendrier.html">Calendrier du jardin</a></li>
+          <li><a href="calendrier.html">Calendrier des travaux</a></li>
           <li><a href="tarifs.html">Devis &amp; tarifs</a></li>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="zone.html">Secteur d'intervention</a></li>

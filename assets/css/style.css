@@ -409,3 +409,22 @@ table.prices thead th { background: var(--green-deep); color: var(--cream); font
 @media (max-width: 520px) { .footer-cols { grid-template-columns: 1fr; } }
 .ticks li::before { top: calc(10px + .8em); }
 .ticks--lg li::before { top: calc(15px + .8em); }
+
+/* Scène 3D de l'accueil */
+.scene { margin: 0; min-width: 0; }
+.scene__stage { position: relative; background: #fbf8f1; border: 1px solid var(--ink); }
+#scene { display: block; width: 100%; aspect-ratio: 5 / 4; cursor: grab; touch-action: pan-y; outline-offset: -4px; }
+#scene.is-drag { cursor: grabbing; }
+.scene__hint { position: absolute; left: 14px; top: 12px; margin: 0; font-size: .74rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); pointer-events: none; }
+.scene__ctl { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; padding: 10px 14px; border: 1px solid var(--ink); border-top: 0; background: var(--paper); }
+.scene__ctl button { min-height: 44px; padding: 0 6px; font: 600 .8rem var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); background: none; border: 0; cursor: pointer; }
+.scene__ctl button:hover { color: var(--clay); }
+.scene__ctl input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 44px; background: transparent; cursor: ew-resize; margin: 0; }
+.scene__ctl input[type="range"]::-webkit-slider-runnable-track { height: 2px; background: var(--ink); }
+.scene__ctl input[type="range"]::-moz-range-track { height: 2px; background: var(--ink); }
+.scene__ctl input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -10px; border-radius: 50%; background: var(--clay); border: 3px solid var(--paper); box-shadow: 0 0 0 1px var(--ink); }
+.scene__ctl input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--clay); border: 3px solid var(--paper); box-shadow: 0 0 0 1px var(--ink); }
+.scene figcaption { margin-top: 14px; }
+html:not(.js) .scene__stage, html:not(.js) .scene__ctl { display: none; }
+@media (min-width: 980px) { .hero__in { grid-template-columns: 1fr 1fr; } }
+.hero h1 { font-size: clamp(2.3rem, 1.4rem + 3.9vw, 4.3rem); }

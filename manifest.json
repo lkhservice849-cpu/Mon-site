@@ -1,7 +1,7 @@
 {
-  "name": "LKH Service – Entretien d'espaces verts",
+  "name": "LKH Service – Arbres, haies, terrains",
   "short_name": "LKH Service",
-  "description": "Entretien et aménagement d'espaces verts pour particuliers et professionnels.",
+  "description": "Débroussaillage, abattage, élagage et taille de haies en Isère et alentours.",
   "lang": "fr",
   "start_url": "./index.html",
   "scope": "./",

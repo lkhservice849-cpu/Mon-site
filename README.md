@@ -1,6 +1,6 @@
 # Site LKH Service
 
-Site statique (HTML, CSS, JavaScript sans dépendance) de LKH Service – Paul Claudio, entretien et aménagement de jardins en Isère et alentours.
+Site statique (HTML, CSS, JavaScript sans dépendance) de LKH Service – Paul Claudio : débroussaillage, abattage d'arbres, élagage et taille de haies en Isère et alentours.
 Aucun cookie, aucune ressource tierce : polices et scripts sont hébergés avec le site.
 
 En ligne via GitHub Pages : https://lkhservice849-cpu.github.io/Mon-site/
@@ -9,10 +9,10 @@ En ligne via GitHub Pages : https://lkhservice849-cpu.github.io/Mon-site/
 
 | Fichier | Contenu |
 |---|---|
-| `index.html` | Accueil : plan de jardin interactif, services, « au jardin ce mois-ci », méthode, secteur |
+| `index.html` | Accueil : scène 3D avant/après, services, calendrier du mois, méthode, secteur |
 | `services.html` | Liste des services + questions fréquentes |
-| `service-*.html` | Une page par service (9) : détail, période conseillée, bon à savoir |
-| `calendrier.html` | Calendrier du jardin mois par mois (le mois en cours est mis en avant) |
+| `service-*.html` | Une page par service (5) : détail, période conseillée, bon à savoir |
+| `calendrier.html` | Calendrier des travaux mois par mois (le mois en cours est mis en avant) |
 | `tarifs.html` | Fonctionnement du devis (aucun prix affiché) |
 | `a-propos.html` | Présentation et engagements |
 | `zone.html` | Secteur d'intervention + vérification par code postal |
@@ -20,7 +20,10 @@ En ligne via GitHub Pages : https://lkhservice849-cpu.github.io/Mon-site/
 | `mentions-legales.html`, `politique-confidentialite.html`, `cgv.html`, `accessibilite.html` | Pages légales |
 | `404.html` | Page d'erreur |
 
-`assets/css/style.css` (couleurs et polices en variables en haut du fichier), `assets/js/main.js`, `assets/fonts/` (Fraunces et Inter, licence SIL OFL).
+- `assets/css/style.css` : styles (couleurs et polices en variables en haut du fichier)
+- `assets/js/main.js` : menu, animations, calendrier, formulaire
+- `assets/js/scene.js` : scène 3D de l'accueil (dessinée dans un canvas, sans bibliothèque)
+- `assets/fonts/` : Fraunces et Inter, licence SIL OFL
 
 ## Reste à compléter
 
@@ -31,4 +34,4 @@ En ligne via GitHub Pages : https://lkhservice849-cpu.github.io/Mon-site/
 ## Formulaire de devis
 
 Sans serveur : le formulaire vérifie les champs puis ouvre la messagerie du visiteur avec un e-mail rédigé vers `lkhservice849@gmail.com`.
-Un service peut être présélectionné par l'adresse : `contact.html?service=haies#devis`.
+Un service peut être présélectionné par l'adresse : `contact.html?service=abattage#devis`.

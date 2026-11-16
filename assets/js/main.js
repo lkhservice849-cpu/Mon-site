@@ -56,27 +56,6 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
-  /* Plan de jardin : survol synchronisé entre le dessin et la légende */
-  var plan = $(".plan");
-  if (plan) {
-    var legend = $$(".legend a");
-    var light = function (zone, on) {
-      $$('[data-zone="' + zone + '"]', plan).forEach(function (g) { g.classList.toggle("is-on", on); });
-      legend.forEach(function (a) { if (a.getAttribute("data-zone") === zone) a.classList.toggle("is-on", on); });
-    };
-    legend.forEach(function (a) {
-      var z = a.getAttribute("data-zone");
-      ["mouseenter", "focus"].forEach(function (ev) { a.addEventListener(ev, function () { light(z, true); }); });
-      ["mouseleave", "blur"].forEach(function (ev) { a.addEventListener(ev, function () { light(z, false); }); });
-    });
-    $$("[data-zone]", plan).forEach(function (g) {
-      var z = g.getAttribute("data-zone");
-      g.addEventListener("mouseenter", function () { light(z, true); });
-      g.addEventListener("mouseleave", function () { light(z, false); });
-      g.addEventListener("click", function () { window.location.href = "service-" + z + ".html"; });
-    });
-  }
-
   /* Calendrier de l'accueil (onglets par mois) */
   var tabs = $$(".cal__tabs [role=tab]");
   if (tabs.length) {
@@ -176,9 +155,9 @@
       }).join(", ");
       var lines = ["Bonjour,", "", "Je souhaite recevoir un devis gratuit.", "",
         "Prestation(s) : " + labels,
-        "Surface approximative : " + (fd.get("surface") || "non précisée"),
+        "Ampleur du chantier : " + (fd.get("surface") || "non précisée"),
         "Code postal : " + fd.get("cp"),
-        "Rythme souhaité : " + fd.get("frequence"),
+        "Délai : " + fd.get("frequence"),
         "Je suis : " + fd.get("profil"), "",
         "Nom : " + fd.get("nom"), "Téléphone : " + fd.get("tel"), "E-mail : " + fd.get("email"),
         "Me rappeler : " + (fd.get("rappel") || "peu importe"), "",
