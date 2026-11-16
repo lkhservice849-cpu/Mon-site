@@ -174,9 +174,9 @@
       var out = $("#cp-result");
       if (!/^\d{5}$/.test(v)) { out.textContent = "Merci d'indiquer un code postal à 5 chiffres."; return; }
       var dep = v.slice(0, 2);
-      var main = ["38", "42"], near = ["07", "69", "26"];
-      if (main.indexOf(dep) > -1) out.textContent = "✅ Bonne nouvelle : votre commune est dans notre secteur habituel. Demandez votre devis gratuit !";
-      else if (near.indexOf(dep) > -1) out.textContent = "👍 Votre commune est proche de notre secteur : contactez-nous, nous intervenons sous conditions de distance.";
+      var main = ["38"], near = ["42", "69", "07", "26", "73", "01"];
+      if (main.indexOf(dep) > -1) out.textContent = "✅ Bonne nouvelle : nous intervenons en Isère. Demandez votre devis gratuit !";
+      else if (near.indexOf(dep) > -1) out.textContent = "👍 Votre commune fait partie des alentours de notre secteur : contactez-nous pour vérifier ensemble.";
       else out.textContent = "Votre commune semble hors de notre zone habituelle, mais n'hésitez pas à nous appeler pour en parler.";
     });
   }

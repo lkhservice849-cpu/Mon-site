@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://www.lkh-service.fr/sitemap.xml
+Sitemap: https://www.lkh-service.com/sitemap.xml
