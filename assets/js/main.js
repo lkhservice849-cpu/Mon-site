@@ -8,7 +8,7 @@
 
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
-  /* En-tête et barre d'appel au défilement */
+  /* Menu pilule : ombre au défilement, barre d'appel mobile */
   var header = $(".site-header"), callbar = $(".callbar"), ticking = false;
   function onScroll() {
     var y = window.scrollY;
@@ -24,26 +24,18 @@
   if (toggle && nav) {
     var setOpen = function (open) {
       toggle.setAttribute("aria-expanded", String(open));
-      toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+      toggle.querySelector("span").textContent = open ? "Fermer" : "Menu";
       nav.classList.toggle("is-open", open);
-      document.body.classList.toggle("nav-open", open);
     };
     toggle.addEventListener("click", function () { setOpen(toggle.getAttribute("aria-expanded") !== "true"); });
-    document.addEventListener("keydown", function (e) {
-      if (!nav.classList.contains("is-open")) return;
-      if (e.key === "Escape") { setOpen(false); toggle.focus(); }
-      if (e.key === "Tab") {
-        var f = [toggle].concat($$("a", nav)), i = f.indexOf(document.activeElement);
-        if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
-        else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
-      }
-    });
-    window.matchMedia("(min-width: 1100px)").addEventListener("change", function (m) { if (m.matches) setOpen(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("is-open")) { setOpen(false); toggle.focus(); } });
+    document.addEventListener("click", function (e) { if (nav.classList.contains("is-open") && !e.target.closest(".pill")) setOpen(false); });
+    window.matchMedia("(min-width: 1060px)").addEventListener("change", function (m) { if (m.matches) setOpen(false); });
   }
 
-  /* Apparitions au défilement */
-  $$(".rows, .steps, .pledges").forEach(function (list) {
-    $$(".reveal", list).forEach(function (el, i) { el.style.setProperty("--n", i % 4); });
+  /* Apparitions au défilement (décalées dans un même groupe) */
+  $$(".cards, .steps, .pledges, .gallery").forEach(function (g) {
+    $$(".reveal", g).forEach(function (el, i) { el.style.setProperty("--n", i % 4); });
   });
   var reveals = $$(".reveal");
   if (reduce || !("IntersectionObserver" in window)) {
@@ -55,6 +47,61 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
+  /* Compteurs */
+  function show(el, v) { el.innerHTML = (el.getAttribute("data-prefix") || "") + v.toLocaleString("fr-FR") + (el.getAttribute("data-suffix") || ""); }
+  function run(el) {
+    var target = Number(el.getAttribute("data-count"));
+    if (reduce || target === 0) { show(el, target); return; }
+    var t0 = null;
+    requestAnimationFrame(function step(ts) {
+      if (t0 === null) t0 = ts;
+      var k = Math.min((ts - t0) / 1400, 1);
+      show(el, Math.round(target * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) requestAnimationFrame(step);
+    });
+  }
+  var counters = $$("[data-count]");
+  if (counters.length && "IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { run(en.target); cio.unobserve(en.target); } });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { cio.observe(c); });
+  }
+
+  /* Comparateurs avant / après */
+  $$(".ba").forEach(function (ba) {
+    var r = $(".ba__range", ba);
+    if (!r) return;
+    var upd = function () { ba.style.setProperty("--pos", r.value + "%"); };
+    r.addEventListener("input", upd);
+    upd();
+  });
+
+  /* Carrousel */
+  $$("[data-carousel]").forEach(function (car) {
+    var track = $(".carousel__track", car), slides = $$(".carousel__slide", car), dotsWrap = $(".carousel__dots", car), live = $(".carousel__live", car), idx = 0;
+    var dots = slides.map(function (s, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "carousel__dot"; b.setAttribute("aria-label", "Afficher l'exemple " + (i + 1));
+      b.addEventListener("click", function () { go(i); });
+      dotsWrap.appendChild(b);
+      return b;
+    });
+    function go(i) {
+      idx = (i + slides.length) % slides.length;
+      track.style.transform = "translateX(" + (-100 * idx) + "%)";
+      slides.forEach(function (s, k) {
+        s.setAttribute("aria-hidden", String(k !== idx));
+        $$("input", s).forEach(function (f) { f.tabIndex = k === idx ? 0 : -1; });
+      });
+      dots.forEach(function (d, k) { d.setAttribute("aria-current", String(k === idx)); });
+      if (live) live.textContent = "Exemple " + (idx + 1) + " sur " + slides.length;
+    }
+    $("[data-prev]", car).addEventListener("click", function () { go(idx - 1); });
+    $("[data-next]", car).addEventListener("click", function () { go(idx + 1); });
+    go(0);
+  });
+
   /* Code postal */
   var cpForm = $("#cp-check");
   if (cpForm) {
@@ -63,9 +110,9 @@
       var v = ($("#cp-input").value || "").trim(), out = $("#cp-result");
       if (!/^\d{5}$/.test(v)) { out.textContent = "Indiquez un code postal à 5 chiffres."; return; }
       var dep = v.slice(0, 2);
-      if (dep === "38") out.textContent = "Oui, j'interviens en Isère. Demandez votre devis gratuit.";
-      else if (["42", "69", "07", "26", "73", "01"].indexOf(dep) > -1) out.textContent = "Votre commune fait partie des alentours : appelez-moi pour vérifier ensemble.";
-      else out.textContent = "C'est en dehors de mon secteur habituel, mais appelez-moi pour en parler.";
+      if (dep === "38") out.textContent = "Oui, nous intervenons en Isère. Demandez votre devis gratuit.";
+      else if (["42", "69", "07", "26", "73", "01"].indexOf(dep) > -1) out.textContent = "Votre commune fait partie des alentours : appelez-nous pour vérifier ensemble.";
+      else out.textContent = "C'est en dehors de notre secteur habituel, mais appelez-nous pour en parler.";
     });
   }
 

@@ -22,7 +22,7 @@
   function smooth(k) { return k * k * (3 - 2 * k); }
   function hex(h) { return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)]; }
   function mix(a, b, k) { return [lerp(a[0], b[0], k), lerp(a[1], b[1], k), lerp(a[2], b[2], k)]; }
-  var CLAY = hex("#b4512c");
+  var CLAY = hex("#2f5d46");
 
   /* ---------- maillages ---------- */
   var meshes, cur, lawnTop;
