@@ -5,7 +5,6 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function $(s, c) { return (c || document).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
-  var NOW = new Date().getMonth() + 1;
 
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
@@ -55,41 +54,6 @@
     }, { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
     reveals.forEach(function (el) { io.observe(el); });
   }
-
-  /* Calendrier de l'accueil (onglets par mois) */
-  var tabs = $$(".cal__tabs [role=tab]");
-  if (tabs.length) {
-    var select = function (m, focus) {
-      tabs.forEach(function (t) {
-        var on = Number(t.getAttribute("data-m")) === m;
-        t.setAttribute("aria-selected", String(on));
-        t.tabIndex = on ? 0 : -1;
-        if (on && focus) t.focus();
-      });
-      $$(".cal__pan").forEach(function (p) { p.hidden = Number(p.getAttribute("data-m")) !== m; });
-    };
-    tabs.forEach(function (t) {
-      var m = Number(t.getAttribute("data-m"));
-      if (m === NOW) t.classList.add("is-now");
-      t.addEventListener("click", function () { select(m); });
-      t.addEventListener("keydown", function (e) {
-        var d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
-        if (d) { e.preventDefault(); select(((m - 1 + d + 12) % 12) + 1, true); }
-      });
-    });
-    select(NOW);
-  }
-
-  /* Mois en cours : frises des pages service et page calendrier */
-  $$(".months li").forEach(function (li) { if (Number(li.getAttribute("data-m")) === NOW) li.classList.add("is-now"); });
-  $$("[data-month-note]").forEach(function (p) {
-    var bar = p.parentElement.querySelector('.months li[data-m="' + NOW + '"]');
-    if (bar) p.textContent = p.getAttribute(bar.classList.contains("on") ? "data-on" : "data-off");
-  });
-  var card = $('.month[data-m="' + NOW + '"]');
-  if (card) card.classList.add("is-now");
-  var jump = $("[data-current-month-link]");
-  if (jump) jump.setAttribute("href", "#mois-" + NOW);
 
   /* Code postal */
   var cpForm = $("#cp-check");

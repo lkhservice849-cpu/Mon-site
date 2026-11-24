@@ -9,10 +9,9 @@ En ligne via GitHub Pages : https://lkhservice849-cpu.github.io/Mon-site/
 
 | Fichier | Contenu |
 |---|---|
-| `index.html` | Accueil : scène 3D avant/après, services, calendrier du mois, méthode, secteur |
+| `index.html` | Accueil : scène 3D avant/après, services, méthode, engagements, secteur |
 | `services.html` | Liste des services + questions fréquentes |
-| `service-*.html` | Une page par service (5) : détail, période conseillée, bon à savoir |
-| `calendrier.html` | Calendrier des travaux mois par mois (le mois en cours est mis en avant) |
+| `service-*.html` | Une page par service (5) : détail et bon à savoir |
 | `tarifs.html` | Fonctionnement du devis (aucun prix affiché) |
 | `a-propos.html` | Présentation et engagements |
 | `zone.html` | Secteur d'intervention + vérification par code postal |
