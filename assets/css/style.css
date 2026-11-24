@@ -417,3 +417,11 @@ table.prices thead th { background: var(--field); color: var(--strong); font-wei
   .cards--3 > :nth-child(4):nth-last-child(2) .card__media, .cards--3 > :nth-child(5):last-child .card__media { aspect-ratio: 480 / 260; }
   .cards--3 > :nth-child(4):nth-last-child(2) .card__media svg, .cards--3 > :nth-child(5):last-child .card__media svg { height: 100%; }
 }
+
+/* Grand visuel de ville en ouverture */
+.hero__visual--town { width: min(100% - 2 * var(--gut), 1440px); margin-inline: auto; }
+.illu--town { width: 100%; height: auto; aspect-ratio: 1600 / 640; }
+@media (max-width: 700px) {
+  .hero__visual--town { overflow: hidden; }
+  .hero__visual--town svg { width: 210%; max-width: none; margin-left: -55%; }
+}
