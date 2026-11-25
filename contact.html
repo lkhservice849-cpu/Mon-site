@@ -7,7 +7,7 @@
 <meta name="description" content="Demandez un devis gratuit à LKH Service : formulaire, téléphone 07 50 06 86 56, e-mail. Saint-Pierre-de-Bœuf.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lkhservice849-cpu.github.io/Mon-site/contact.html">
-<meta name="theme-color" content="#2f5d46">
+<meta name="theme-color" content="#f6f0e9">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="LKH Service">
@@ -20,7 +20,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
-<link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/js/main.js" defer></script>
@@ -28,145 +28,139 @@
 <body>
 <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 <header class="site-header">
-  <div class="pill">
-    <a class="brand" href="index.html" aria-label="LKH Service – accueil"><span class="brand__name">LKH Service</span><span class="brand__tag">Isère et alentours</span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav"><span>Menu</span><i aria-hidden="true"></i></button>
-    <nav class="nav" id="nav" aria-label="Navigation principale">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="realisations.html">Réalisations</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-      <div class="nav__cta">
-        <a class="btn btn--secondary nav__tel" href="tel:+33750068656">07 50 06 86 56</a>
-        <a class="btn btn--primary" href="contact.html#devis">Devis gratuit<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      </div>
-    </nav>
+  <div class="bar">
+    <a class="bar__logo" href="index.html" aria-label="LKH Service – accueil"><span class="logo">lkh service</span></a>
+    <a class="bar__link bar__desk" href="services.html">Nos services</a>
+    <span class="bar__spacer" aria-hidden="true"></span>
+    <a class="bar__link bar__desk" href="realisations.html">Réalisations</a><a class="bar__link bar__desk" href="tarifs.html">Tarifs</a><a class="bar__link bar__desk" href="a-propos.html">À propos</a><a class="bar__link bar__desk" href="contact.html" aria-current="page">Contact</a>
+    <a class="bar__link bar__desk" href="tel:+33750068656">07 50 06 86 56</a>
+    <button class="bar__toggle" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+    <a class="bar__link bar__cta" href="contact.html#devis"><span class="long">Devis gratuit</span><span class="short">Devis</span></a>
   </div>
+  <nav class="menu" id="menu" aria-label="Navigation principale">
+    <ul><li><a class="menu__big" href="index.html">Accueil</a></li><li><a class="menu__big" href="services.html">Services</a></li><li><a class="menu__big" href="realisations.html">Réalisations</a></li><li><a class="menu__big" href="tarifs.html">Tarifs</a></li><li><a class="menu__big" href="a-propos.html">À propos</a></li><li><a class="menu__big" href="contact.html" aria-current="page">Contact</a></li></ul>
+    <div class="menu__foot">
+      <a class="box-btn" href="tel:+33750068656">Appeler le 07 50 06 86 56</a>
+    </div>
+  </nav>
 </header>
 <main id="contenu">
 <section class="page-head">
-  <div class="wrap">
+  <div class="wrap page-head__grid">
     <nav class="crumb" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Contact</li></ol></nav>
-    <h1>Demander un devis gratuit</h1>
-    <p class="lead">Remplissez le formulaire ou appelez-nous. Le devis est gratuit et sans engagement.</p>
+    <h1 class="words">Demander un devis</h1>
+    <p class="text reveal">Remplissez le formulaire ou appelez-nous. Le devis est gratuit et sans engagement.</p>
   </div>
 </section>
 
 <section class="sec sec--tight" id="devis">
   <div class="wrap contact">
-    <form id="devis-form" class="form reveal" action="mailto:lkhservice849@gmail.com" method="post" enctype="text/plain" data-mailto="lkhservice849@gmail.com" novalidate>
-      <p class="caption mb-0">Les champs marqués d'un <span class="req">*</span> sont obligatoires.</p>
-      <fieldset class="field">
-        <legend>De quoi avez-vous besoin&nbsp;? <span class="req">*</span></legend>
-        <div class="choices"><label class="choice"><input type="checkbox" name="service" value="debroussaillage"><span>Débroussaillage</span></label><label class="choice"><input type="checkbox" name="service" value="abattage"><span>Abattage d'arbres</span></label><label class="choice"><input type="checkbox" name="service" value="elagage"><span>Élagage et taille d'arbres</span></label><label class="choice"><input type="checkbox" name="service" value="haies"><span>Taille de haies</span></label><label class="choice"><input type="checkbox" name="service" value="dechets"><span>Évacuation du bois et des branches</span></label><label class="choice"><input type="checkbox" name="service" value="autre"><span>Autre demande</span></label></div>
-        <p class="field__error" id="service-error" aria-live="polite"></p>
-      </fieldset>
-      <div class="form__2">
-        <div class="field">
-          <label for="surface">Ampleur du chantier</label>
-          <select id="surface" name="surface">
-            <option value="">Je ne sais pas</option><option>Un arbre</option><option>Plusieurs arbres</option>
-            <option>Une haie de moins de 20 m</option><option>Une haie de plus de 20 m</option>
-            <option>Un terrain de moins de 500 m²</option><option>Un terrain de 500 à 2 000 m²</option><option>Un terrain de plus de 2 000 m²</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="cp">Code postal du chantier <span class="req">*</span></label>
-          <input id="cp" name="cp" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" required aria-describedby="cp-err">
-          <p class="field__error" id="cp-err"></p>
-        </div>
+    <form id="devis-form" class="form contact__form reveal" action="mailto:lkhservice849@gmail.com" method="post" enctype="text/plain" data-mailto="lkhservice849@gmail.com" novalidate>
+      <div class="form__sec">
+        <fieldset class="field">
+          <legend>De quoi avez-vous besoin&nbsp;? <span class="req">*</span></legend>
+          <div class="choices"><label class="choice"><input type="checkbox" name="service" value="debroussaillage"><span>Débroussaillage</span></label><label class="choice"><input type="checkbox" name="service" value="abattage"><span>Abattage d'arbres</span></label><label class="choice"><input type="checkbox" name="service" value="elagage"><span>Élagage et taille d'arbres</span></label><label class="choice"><input type="checkbox" name="service" value="haies"><span>Taille de haies</span></label><label class="choice"><input type="checkbox" name="service" value="dechets"><span>Évacuation du bois et des branches</span></label><label class="choice"><input type="checkbox" name="service" value="autre"><span>Autre demande</span></label></div>
+          <p class="field__error" id="service-error" aria-live="polite"></p>
+        </fieldset>
       </div>
-      <div class="form__2">
-        <div class="field">
-          <label for="frequence">Délai souhaité <span class="req">*</span></label>
-          <select id="frequence" name="frequence" required aria-describedby="freq-err">
-            <option value="">Choisir…</option><option>C'est urgent (arbre dangereux, branche cassée)</option><option>Dès que possible</option>
-            <option>Dans les prochaines semaines</option><option>Pas pressé</option><option>Je me renseigne</option>
-          </select>
-          <p class="field__error" id="freq-err"></p>
-        </div>
-        <div class="field">
-          <label for="profil">Vous êtes <span class="req">*</span></label>
-          <select id="profil" name="profil" required aria-describedby="profil-err">
-            <option value="">Choisir…</option><option>Un particulier</option><option>Une entreprise / un commerce</option>
-            <option>Une copropriété / un syndic</option><option>Une collectivité / association</option>
-          </select>
-          <p class="field__error" id="profil-err"></p>
-        </div>
-      </div>
-      <div class="field">
-        <label for="nom">Nom et prénom <span class="req">*</span></label>
-        <input id="nom" name="nom" type="text" autocomplete="name" required aria-describedby="nom-err">
-        <p class="field__error" id="nom-err"></p>
-      </div>
-      <div class="form__2">
-        <div class="field">
-          <label for="tel">Téléphone <span class="req">*</span></label>
-          <input id="tel" name="tel" type="tel" autocomplete="tel" required aria-describedby="tel-err">
-          <p class="field__error" id="tel-err"></p>
-        </div>
-        <div class="field">
-          <label for="email">E-mail <span class="req">*</span></label>
-          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
-          <p class="field__error" id="email-err"></p>
+      <div class="form__sec">
+        <div class="form__2">
+          <div class="field">
+            <label for="surface">Ampleur du chantier</label>
+            <select id="surface" name="surface">
+              <option value="">Je ne sais pas</option><option>Un arbre</option><option>Plusieurs arbres</option>
+              <option>Une haie de moins de 20 m</option><option>Une haie de plus de 20 m</option>
+              <option>Un terrain de moins de 500 m²</option><option>Un terrain de 500 à 2 000 m²</option><option>Un terrain de plus de 2 000 m²</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cp">Code postal du chantier <span class="req">*</span></label>
+            <input id="cp" name="cp" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" required aria-describedby="cp-err">
+            <p class="field__error" id="cp-err"></p>
+          </div>
+          <div class="field">
+            <label for="frequence">Délai souhaité <span class="req">*</span></label>
+            <select id="frequence" name="frequence" required aria-describedby="freq-err">
+              <option value="">Choisir…</option><option>C'est urgent (arbre dangereux, branche cassée)</option><option>Dès que possible</option>
+              <option>Dans les prochaines semaines</option><option>Pas pressé</option><option>Je me renseigne</option>
+            </select>
+            <p class="field__error" id="freq-err"></p>
+          </div>
+          <div class="field">
+            <label for="profil">Vous êtes <span class="req">*</span></label>
+            <select id="profil" name="profil" required aria-describedby="profil-err">
+              <option value="">Choisir…</option><option>Un particulier</option><option>Une entreprise / un commerce</option>
+              <option>Une copropriété / un syndic</option><option>Une collectivité / association</option>
+            </select>
+            <p class="field__error" id="profil-err"></p>
+          </div>
         </div>
       </div>
-      <div class="field">
-        <label for="rappel">Quand vous rappeler&nbsp;?</label>
-        <select id="rappel" name="rappel"><option value="">Peu importe</option><option>Le matin</option><option>Le midi</option><option>L'après-midi</option><option>En fin de journée</option></select>
+      <div class="form__sec">
+        <div class="field">
+          <label for="nom">Nom et prénom <span class="req">*</span></label>
+          <input id="nom" name="nom" type="text" autocomplete="name" required aria-describedby="nom-err">
+          <p class="field__error" id="nom-err"></p>
+        </div>
+        <div class="form__2">
+          <div class="field">
+            <label for="tel">Téléphone <span class="req">*</span></label>
+            <input id="tel" name="tel" type="tel" autocomplete="tel" required aria-describedby="tel-err">
+            <p class="field__error" id="tel-err"></p>
+          </div>
+          <div class="field">
+            <label for="email">E-mail <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
+            <p class="field__error" id="email-err"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="rappel">Quand vous rappeler&nbsp;?</label>
+          <select id="rappel" name="rappel"><option value="">Peu importe</option><option>Le matin</option><option>Le midi</option><option>L'après-midi</option><option>En fin de journée</option></select>
+        </div>
+        <div class="field">
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Nombre et hauteur des arbres, longueur de la haie, état du terrain, accès…"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="website">Ne pas remplir</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="field">
+          <label class="consent"><input type="checkbox" name="consent" required><span>J'accepte que ces informations soient utilisées par LKH Service pour répondre à ma demande. <span class="req">*</span></span></label>
+          <p class="field__error"></p>
+        </div>
       </div>
-      <div class="field">
-        <label for="message">Votre message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Nombre et hauteur des arbres, longueur de la haie, état du terrain, accès…"></textarea>
+      <div class="form__sec">
+        <button class="box-btn box-btn--fill box-btn--block" type="submit">Envoyer ma demande de devis <svg class="arrow-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+        <p class="note mb-0">Votre messagerie s'ouvre avec la demande déjà rédigée&nbsp;: il ne reste qu'à l'envoyer, avec des photos si vous en avez. Vos données servent uniquement à vous répondre et sont conservées 3 ans au plus. <a href="politique-confidentialite.html">Politique de confidentialité</a>.</p>
+        <div id="form-status" class="form-status" role="status" tabindex="-1" hidden></div>
       </div>
-      <div class="hp" aria-hidden="true"><label for="website">Ne pas remplir</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-      <div class="field">
-        <label class="consent"><input type="checkbox" name="consent" required><span>J'accepte que ces informations soient utilisées par LKH Service pour répondre à ma demande. <span class="req">*</span></span></label>
-        <p class="field__error"></p>
-      </div>
-      <button class="btn btn--primary btn--block" type="submit">Envoyer ma demande de devis<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
-      <p class="caption mb-0">Votre messagerie s'ouvre avec la demande déjà rédigée&nbsp;: il ne reste qu'à l'envoyer, en joignant des photos si vous en avez. Vos données servent uniquement à vous répondre et sont conservées 3 ans au plus. Voir la <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
-      <div id="form-status" class="form-status" role="status" tabindex="-1" hidden></div>
     </form>
     <aside class="contact__side">
-      <div class="panel reveal">
-        <h2 class="panel__t">Par téléphone</h2>
-        <a class="panel__tel" href="tel:+33750068656">07 50 06 86 56</a>
-        <p>En intervention, nous ne pouvons pas toujours décrocher. Laissez un message, nous vous rappelons.</p>
-        <a class="btn btn--secondary" href="tel:+33750068656">Appeler maintenant</a>
+      <div class="side-box reveal">
+        <p class="label label--dot mb-0">Par téléphone</p>
+        <a class="side-box__tel" href="tel:+33750068656">07 50 06 86 56</a>
+        <p class="text mb-0">En intervention, nous ne pouvons pas toujours décrocher. Laissez un message, nous vous rappelons.</p>
+        <a class="box-btn" href="tel:+33750068656">Appeler maintenant</a>
       </div>
-      <div class="panel reveal">
-        <h2 class="panel__t">Par écrit</h2>
-        <p><a href="mailto:lkhservice849@gmail.com">lkhservice849@gmail.com</a></p>
+      <div class="side-box reveal" style="border-top:0">
+        <p class="label label--dot mb-0">Par écrit</p>
+        <p class="mb-0"><a href="mailto:lkhservice849@gmail.com">lkhservice849@gmail.com</a></p>
         <address>LKH Service<br>66 Grande Rue<br>42520 Saint-Pierre-de-Bœuf</address>
-        <p style="margin-top:16px"><a class="link" href="https://www.openstreetmap.org/search?query=66%20Grande%20Rue%2C%2042520%20Saint-Pierre-de-B%C5%93uf" rel="noopener" target="_blank">Voir sur la carte<span class="visually-hidden"> (nouvelle fenêtre)</span></a></p>
+        <a class="link-arrow" href="https://www.openstreetmap.org/search?query=66%20Grande%20Rue%2C%2042520%20Saint-Pierre-de-B%C5%93uf" rel="noopener" target="_blank" style="justify-self:start">Voir sur la carte<span class="visually-hidden"> (nouvelle fenêtre)</span> <svg class="arrow-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
       </div>
     </aside>
   </div>
 </section>
 </main>
 <footer class="site-footer">
-  <div class="wrap">
-    <p class="footer-big">Un arbre, une haie, un terrain à reprendre&nbsp;? Parlons-en&nbsp;: <a href="tel:+33750068656">07 50 06 86 56</a></p>
-    <div class="footer-cols">
+  <div class="foot">
+    <div class="foot__top">
       <div>
         <h2>LKH Service</h2>
-        <p class="muted">Débroussaillage, abattage, élagage et taille de haies pour les particuliers et les professionnels, en Isère et alentours.</p>
-        <a class="btn btn--primary" href="contact.html#devis">Demander un devis gratuit<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <p class="mb-0">Débroussaillage, abattage, élagage et taille de haies en Isère et alentours, pour les particuliers et les professionnels.</p>
       </div>
       <div>
         <h2>Services</h2>
-        <ul>
-          <li><a href="service-debroussaillage.html">Débroussaillage</a></li>
-          <li><a href="service-abattage.html">Abattage d'arbres</a></li>
-          <li><a href="service-elagage.html">Élagage et taille d'arbres</a></li>
-          <li><a href="service-haies.html">Taille de haies</a></li>
-          <li><a href="service-dechets.html">Évacuation du bois et des branches</a></li>
-        </ul>
+        <ul><li><a href="service-debroussaillage.html">Débroussaillage</a></li><li><a href="service-abattage.html">Abattage d'arbres</a></li><li><a href="service-elagage.html">Élagage et taille d'arbres</a></li><li><a href="service-haies.html">Taille de haies</a></li><li><a href="service-dechets.html">Évacuation du bois et des branches</a></li></ul>
       </div>
       <div>
         <h2>Entreprise</h2>
@@ -180,15 +174,13 @@
       </div>
       <div>
         <h2>Contact</h2>
-        <address>
-          LKH Service<br>66 Grande Rue<br>42520 Saint-Pierre-de-Bœuf<br>
-          <a href="tel:+33750068656">07 50 06 86 56</a><br>
-          <a href="mailto:lkhservice849@gmail.com">lkhservice849@gmail.com</a>
-        </address>
+        <address>66 Grande Rue<br>42520 Saint-Pierre-de-Bœuf<br><a href="tel:+33750068656">07 50 06 86 56</a><br><a href="mailto:lkhservice849@gmail.com">lkhservice849@gmail.com</a></address>
+        <a class="box-btn box-btn--fill" href="contact.html#devis">Demander un devis</a>
       </div>
     </div>
-    <div class="footer-legal">
-      <p class="mb-0">© <span data-year>2026</span> LKH Service · SIRET 103 172 763 00015 · Site sans cookie ni traceur</p>
+    <div class="foot__word" aria-hidden="true"><span>LKH Service</span></div>
+    <div class="foot__legal">
+      <p class="mb-0">© <span data-year>2026</span> LKH Service · SIRET 103 172 763 00015 · Sans cookie</p>
       <ul>
         <li><a href="mentions-legales.html">Mentions légales</a></li>
         <li><a href="politique-confidentialite.html">Confidentialité</a></li>
@@ -199,7 +191,7 @@
   </div>
 </footer>
 <div class="callbar">
-  <a href="tel:+33750068656">Appeler maintenant</a>
+  <a href="tel:+33750068656">Appeler</a>
   <a href="contact.html#devis">Devis gratuit</a>
 </div>
 </body>

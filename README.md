@@ -22,7 +22,8 @@ En ligne via GitHub Pages : https://lkhservice849-cpu.github.io/Mon-site/
 
 - `assets/css/style.css` : styles. Les couleurs, polices, espacements et rayons sont des variables en haut du fichier (accent vert forêt `#2f5d46`, fond crème `#fefffc`, bordures `#dee2de`)
 - `assets/js/main.js` : menu, animations, calendrier, formulaire
-- `assets/js/scene.js` : scène 3D de l'accueil (dessinée dans un canvas, sans bibliothèque)
+- `assets/js/scene.js` : maquette 3D interactive de l'accueil (canvas, sans bibliothèque). Elle sert aussi à produire les images fixes de `assets/img/rendus/` (réglages `data-yaw`, `data-t`, `data-zoom`, `data-target`, `data-static`).
+- `assets/img/rendus/` : vues fixes de la maquette 3D utilisées comme grandes images, en attendant les photos de chantiers
 - `assets/fonts/` : Fraunces et Inter, licence SIL OFL
 
 ## Reste à compléter

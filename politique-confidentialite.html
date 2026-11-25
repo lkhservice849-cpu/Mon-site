@@ -7,7 +7,7 @@
 <meta name="description" content="Politique de confidentialité et de protection des données personnelles (RGPD) du site LKH Service. Aucun cookie.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lkhservice849-cpu.github.io/Mon-site/politique-confidentialite.html">
-<meta name="theme-color" content="#2f5d46">
+<meta name="theme-color" content="#f6f0e9">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="LKH Service">
@@ -20,7 +20,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
-<link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/js/main.js" defer></script>
@@ -28,31 +28,28 @@
 <body>
 <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 <header class="site-header">
-  <div class="pill">
-    <a class="brand" href="index.html" aria-label="LKH Service – accueil"><span class="brand__name">LKH Service</span><span class="brand__tag">Isère et alentours</span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav"><span>Menu</span><i aria-hidden="true"></i></button>
-    <nav class="nav" id="nav" aria-label="Navigation principale">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="realisations.html">Réalisations</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="nav__cta">
-        <a class="btn btn--secondary nav__tel" href="tel:+33750068656">07 50 06 86 56</a>
-        <a class="btn btn--primary" href="contact.html#devis">Devis gratuit<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      </div>
-    </nav>
+  <div class="bar">
+    <a class="bar__logo" href="index.html" aria-label="LKH Service – accueil"><span class="logo">lkh service</span></a>
+    <a class="bar__link bar__desk" href="services.html">Nos services</a>
+    <span class="bar__spacer" aria-hidden="true"></span>
+    <a class="bar__link bar__desk" href="realisations.html">Réalisations</a><a class="bar__link bar__desk" href="tarifs.html">Tarifs</a><a class="bar__link bar__desk" href="a-propos.html">À propos</a><a class="bar__link bar__desk" href="contact.html">Contact</a>
+    <a class="bar__link bar__desk" href="tel:+33750068656">07 50 06 86 56</a>
+    <button class="bar__toggle" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+    <a class="bar__link bar__cta" href="contact.html#devis"><span class="long">Devis gratuit</span><span class="short">Devis</span></a>
   </div>
+  <nav class="menu" id="menu" aria-label="Navigation principale">
+    <ul><li><a class="menu__big" href="index.html">Accueil</a></li><li><a class="menu__big" href="services.html">Services</a></li><li><a class="menu__big" href="realisations.html">Réalisations</a></li><li><a class="menu__big" href="tarifs.html">Tarifs</a></li><li><a class="menu__big" href="a-propos.html">À propos</a></li><li><a class="menu__big" href="contact.html">Contact</a></li></ul>
+    <div class="menu__foot">
+      <a class="box-btn" href="tel:+33750068656">Appeler le 07 50 06 86 56</a>
+    </div>
+  </nav>
 </header>
 <main id="contenu">
 <section class="page-head">
-  <div class="wrap">
+  <div class="wrap page-head__grid">
     <nav class="crumb" aria-label="Fil d'Ariane"><ol><li><a href="index.html">Accueil</a></li><li aria-current="page">Confidentialité</li></ol></nav>
-    <h1>Politique de confidentialité</h1>
-    <p class="lead">Comment LKH Service collecte, utilise et protège vos données personnelles.</p>
+    <h1 class="words">Politique de confidentialité</h1>
+    <p class="text reveal">Comment LKH Service collecte, utilise et protège vos données personnelles.</p>
   </div>
 </section>
 <div class="wrap wrap--narrow legal">
@@ -104,23 +101,15 @@
 </div>
 </main>
 <footer class="site-footer">
-  <div class="wrap">
-    <p class="footer-big">Un arbre, une haie, un terrain à reprendre&nbsp;? Parlons-en&nbsp;: <a href="tel:+33750068656">07 50 06 86 56</a></p>
-    <div class="footer-cols">
+  <div class="foot">
+    <div class="foot__top">
       <div>
         <h2>LKH Service</h2>
-        <p class="muted">Débroussaillage, abattage, élagage et taille de haies pour les particuliers et les professionnels, en Isère et alentours.</p>
-        <a class="btn btn--primary" href="contact.html#devis">Demander un devis gratuit<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <p class="mb-0">Débroussaillage, abattage, élagage et taille de haies en Isère et alentours, pour les particuliers et les professionnels.</p>
       </div>
       <div>
         <h2>Services</h2>
-        <ul>
-          <li><a href="service-debroussaillage.html">Débroussaillage</a></li>
-          <li><a href="service-abattage.html">Abattage d'arbres</a></li>
-          <li><a href="service-elagage.html">Élagage et taille d'arbres</a></li>
-          <li><a href="service-haies.html">Taille de haies</a></li>
-          <li><a href="service-dechets.html">Évacuation du bois et des branches</a></li>
-        </ul>
+        <ul><li><a href="service-debroussaillage.html">Débroussaillage</a></li><li><a href="service-abattage.html">Abattage d'arbres</a></li><li><a href="service-elagage.html">Élagage et taille d'arbres</a></li><li><a href="service-haies.html">Taille de haies</a></li><li><a href="service-dechets.html">Évacuation du bois et des branches</a></li></ul>
       </div>
       <div>
         <h2>Entreprise</h2>
@@ -134,15 +123,13 @@
       </div>
       <div>
         <h2>Contact</h2>
-        <address>
-          LKH Service<br>66 Grande Rue<br>42520 Saint-Pierre-de-Bœuf<br>
-          <a href="tel:+33750068656">07 50 06 86 56</a><br>
-          <a href="mailto:lkhservice849@gmail.com">lkhservice849@gmail.com</a>
-        </address>
+        <address>66 Grande Rue<br>42520 Saint-Pierre-de-Bœuf<br><a href="tel:+33750068656">07 50 06 86 56</a><br><a href="mailto:lkhservice849@gmail.com">lkhservice849@gmail.com</a></address>
+        <a class="box-btn box-btn--fill" href="contact.html#devis">Demander un devis</a>
       </div>
     </div>
-    <div class="footer-legal">
-      <p class="mb-0">© <span data-year>2026</span> LKH Service · SIRET 103 172 763 00015 · Site sans cookie ni traceur</p>
+    <div class="foot__word" aria-hidden="true"><span>LKH Service</span></div>
+    <div class="foot__legal">
+      <p class="mb-0">© <span data-year>2026</span> LKH Service · SIRET 103 172 763 00015 · Sans cookie</p>
       <ul>
         <li><a href="mentions-legales.html">Mentions légales</a></li>
         <li><a href="politique-confidentialite.html">Confidentialité</a></li>
@@ -153,7 +140,7 @@
   </div>
 </footer>
 <div class="callbar">
-  <a href="tel:+33750068656">Appeler maintenant</a>
+  <a href="tel:+33750068656">Appeler</a>
   <a href="contact.html#devis">Devis gratuit</a>
 </div>
 </body>

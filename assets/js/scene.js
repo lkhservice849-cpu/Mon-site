@@ -11,9 +11,12 @@
   var chips = Array.prototype.slice.call(document.querySelectorAll(".legend a"));
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var PITCH = 0.54, cP = Math.cos(PITCH), sP = Math.sin(PITCH), DIST = 36;
+  // Réglages optionnels via data-* (utilisés pour produire des vues fixes)
+  var cfg = canvas.dataset, STATIC = cfg.static === "1", SKY = cfg.sky === "1";
+  var ZOOM = cfg.zoom ? Number(cfg.zoom) : 1, TARGET = cfg.target ? cfg.target.split(",").map(Number) : null;
+  var PITCH = cfg.pitch ? Number(cfg.pitch) : 0.54, cP = Math.cos(PITCH), sP = Math.sin(PITCH), DIST = cfg.dist ? Number(cfg.dist) : 36;
   var LIGHT = (function () { var v = [-0.52, 0.8, 0.3], l = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]); return [v[0] / l, v[1] / l, v[2] / l]; })();
-  var yaw = -0.6, yawBase = -0.6, t = 0, active = null, faces2d = [];
+  var yaw = cfg.yaw ? Number(cfg.yaw) : -0.6, yawBase = yaw, t = cfg.t ? Number(cfg.t) : 0, active = null, faces2d = [];
   var W = 0, H = 0, S = 1, dpr = 1, dirty = true, visible = true, dragging = false, played = false;
 
   function rnd(s) { var x = Math.sin(s * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
@@ -22,7 +25,7 @@
   function smooth(k) { return k * k * (3 - 2 * k); }
   function hex(h) { return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)]; }
   function mix(a, b, k) { return [lerp(a[0], b[0], k), lerp(a[1], b[1], k), lerp(a[2], b[2], k)]; }
-  var CLAY = hex("#2f5d46");
+  var CLAY = hex("#c8873f");
 
   /* ---------- maillages ---------- */
   var meshes, cur, lawnTop;
@@ -189,6 +192,7 @@
   function render() {
     build(t);
     var cY = Math.cos(yaw), sY = Math.sin(yaw), cx0 = W / 2, cy0 = H * 0.61;
+    if (TARGET) { var tv0 = [TARGET[0] * cY + TARGET[2] * sY, -TARGET[0] * sY + TARGET[2] * cY]; var tv = [tv0[0], TARGET[1] * cP - tv0[1] * sP, tv0[1] * cP + TARGET[1] * sP], tf = DIST / (DIST - tv[2]); cx0 = W / 2 - tv[0] * tf * S; cy0 = H / 2 + tv[1] * tf * S; }
     // monde -> vue (x droite, y haut, z vers la caméra)
     function view(q) {
       var xr = q[0] * cY + q[2] * sY, zr = -q[0] * sY + q[2] * cY;
@@ -228,6 +232,7 @@
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
+    if (SKY) { var sk = ctx.createLinearGradient(0, 0, 0, H); sk.addColorStop(0, "#dfe6e4"); sk.addColorStop(0.55, "#efe9df"); sk.addColorStop(1, "#f6f0e9"); ctx.fillStyle = sk; ctx.fillRect(0, 0, W, H); }
     ctx.lineJoin = "round"; ctx.lineWidth = 0.8;
     // ombre du socle
     var g = ctx.createRadialGradient(cx0, 0, S * 1.5, cx0, 0, S * 7.4);
@@ -247,7 +252,7 @@
   function resize() {
     var r = canvas.getBoundingClientRect();
     dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = r.width; H = r.height; S = Math.min(W / 15.6, H / 12.2);
+    W = r.width; H = r.height; S = Math.min(W / 15.6, H / 12.2) * ZOOM;
     canvas.width = shade.width = Math.round(W * dpr); canvas.height = shade.height = Math.round(H * dpr);
     dirty = true;
   }
@@ -330,5 +335,6 @@
     }, { threshold: 0.35 }).observe(canvas);
   }
   resize();
+  if (STATIC) { render(); window.__sceneReady = true; return; }
   requestAnimationFrame(frame);
 })();
