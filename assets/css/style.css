@@ -149,7 +149,7 @@ h1, h2, h3 { margin: 0; font-family: var(--sans); font-weight: 560; font-stretch
 .slides::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(40, 34, 28, .45)); pointer-events: none; }
 .slides__caption { position: absolute; z-index: 2; left: clamp(16px, 2vw, 28px); bottom: clamp(14px, 2vw, 26px); color: #fff; }
 .slides__kind { display: block; margin-bottom: 6px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-.slides__name { display: block; overflow: hidden; font-size: clamp(48px, 9.5vw, 156px); font-weight: 600; font-stretch: 92%; letter-spacing: -.035em; line-height: .86; text-transform: uppercase; }
+.slides__name { display: block; overflow: hidden; font-size: clamp(48px, 9.5vw, 156px); font-weight: 600; font-stretch: 92%; letter-spacing: -.035em; line-height: .86; text-transform: uppercase; padding-top: .14em; margin-top: -.14em; }
 .slides__name span { display: inline-block; animation: name-in .9s var(--ease-out) both; }
 @keyframes name-in { from { transform: translateY(105%); } }
 .slides__thumbs { position: absolute; z-index: 2; right: clamp(12px, 1.6vw, 24px); bottom: clamp(12px, 1.6vw, 24px); display: flex; gap: 6px; }
