@@ -20,7 +20,7 @@
   onScroll();
 
   /* Menu mobile */
-  var toggle = $(".nav-toggle"), nav = $("#nav");
+  var toggle = $(".bar__toggle"), nav = $("#menu");
   if (toggle && nav) {
     var setOpen = function (open) {
       toggle.setAttribute("aria-expanded", String(open));
@@ -29,8 +29,9 @@
     };
     toggle.addEventListener("click", function () { setOpen(toggle.getAttribute("aria-expanded") !== "true"); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("is-open")) { setOpen(false); toggle.focus(); } });
-    document.addEventListener("click", function (e) { if (nav.classList.contains("is-open") && !e.target.closest(".pill")) setOpen(false); });
-    window.matchMedia("(min-width: 1060px)").addEventListener("change", function (m) { if (m.matches) setOpen(false); });
+    document.addEventListener("click", function (e) { if (nav.classList.contains("is-open") && !e.target.closest(".site-header")) setOpen(false); });
+    $$("a", nav).forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
+    window.matchMedia("(min-width: 1100px)").addEventListener("change", function (m) { if (m.matches) setOpen(false); });
   }
 
   /* Titres révélés mot à mot */
